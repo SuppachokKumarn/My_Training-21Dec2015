@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void bindWidget() {
         trafficListView = (ListView) findViewById(R.id.listView);
-        aboutMeButton = (Botton) findViewById(R.id.button)
+        aboutMeButton = (Button) findViewById(R.id.button);
     }
 
 }   //Main Class
