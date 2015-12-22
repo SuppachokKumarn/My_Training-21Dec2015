@@ -1,8 +1,12 @@
 package uih.kumarn.suppachok.mytraining1;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.provider.LiveFolders;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -19,8 +23,27 @@ public class MainActivity extends AppCompatActivity {
 
         //Bind Widget
         bindWidget();
+        //Button Controller
+        buttonController();
 
-    }   //Main Method
+        }   //Main Method
+
+    private void buttonController() {
+        aboutMeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MediaPlayer buttomMediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.effect_btn_long);
+                buttomMediaPlayer.start();
+
+                Intent objIntent = new Intent(Intent.ACTION_VIEW);
+                objIntent.setData(Uri.parse("https://youtu.be/09R8_2nJtjg"));
+                startActivity(objIntent);
+            } //event
+        });
+
+    }
+
 
     private void bindWidget() {
         trafficListView = (ListView) findViewById(R.id.listView);
